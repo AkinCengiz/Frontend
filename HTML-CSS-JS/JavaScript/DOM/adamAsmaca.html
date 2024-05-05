@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #word span {
+            margin-right: 5px;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="startGame()">Start</button>
+    <div id="word">
+
+    </div>
+    <script>
+        let word = "";
+        function startGame(){
+
+            var turkishNames = ["kalem", "silgi", "defter", "kitap", "masa", "sandalye", "bilgisayar", "fare", "klavye", "kamera"];
+            var randomIndex = Math.floor(Math.random() * turkishNames.length);
+            word = turkishNames[randomIndex].toLowerCase();
+            var wordLength = word.length;
+            var wordElement = document.querySelector("#word");
+            wordElement.innerHTML = "";
+            for (var i = 0; i < wordLength; i++) {
+                var spanElement = document.createElement("span");
+                spanElement.innerHTML = "___";
+                wordElement.appendChild(spanElement);
+            }
+        }
+
+        window.addEventListener("keydown", function(e){
+            let letter = e.key.toLowerCase();
+            if(word.includes(letter)){
+                var spans = document.querySelectorAll("#word span");
+                for(var i = 0; i < word.length; i++){
+                    if(word[i] == letter){
+                        spans[i].innerHTML = letter;
+                    }
+                }
+            }
+        });
+        
+    </script>
+</body>
+</html>

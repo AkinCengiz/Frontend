@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="moveLeft()">Left</button>
+    <button onclick="moveRight()">Right</button>
+    <button onclick="moveUp()">Up</button>
+    <button onclick="moveDown()">Down</button>
+    <hr>
+    <div class="box"></div>
+
+
+    <script>
+        var box = document.querySelector('.box');
+        var left = box.style.left;
+        var top = box.style.top;
+        function moveLeft() {
+            left -= 10;
+            document.querySelector('.box').style.left = left + 'px';
+        }
+        function moveRight() {
+            left += 10;
+            document.querySelector('.box').style.left = left + 'px';
+        }
+        function moveUp() {
+            top -= 10;
+            document.querySelector('.box').style.top = top + 'px';
+        }
+        function moveDown() {
+            top += 10;
+            document.querySelector('.box').style.top = top + 'px';
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+a{
+    color: #000;
+}
+#header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    height: 80px;
+    background-color: #000;
+    color: #fff;
+    align-items: center;
+    padding: 0 20px;
+}
+#header #logo{
+    margin-left: 40px;
+    color: #fff;
+    font-size: 28px;
+}
+#header #logo a{
+    color: #fff;
+}
+#header #logo a:hover{
+    color: #fff;
+}
+#header #menu{
+    margin-right: 40px;
+}
+#menu ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+#menu ul li{
+    margin: 10px;
+    text-transform: capitalize;
+}
+#menu ul li a{
+    color: #fff;
+}
+.container{
+    width: 80%;
+    margin: 0 auto;
+    padding: 50px;
+}
+#section-top{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+#image{
+    width: 70%;
+    padding: 20px;
+}
+#image img{
+    width: 100%;
+    height: auto;
+}
+#top-text{
+    width: 30%;
+    padding: 20px;
+}
+#top-text h1{
+    margin-top: 20px;
+    font-size: 40px;
+    color: #000;
+}
+#top-text p{
+    font-size: 20px;
+    color: #000;
+    margin: 20px 0;
+    text-align: justify;
+}
+.btn{
+    background-color:#0D6EFD;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+.btn a{
+    color: #fff;
+}
+#tag-text{
+    background-color: #6C757D;
+    padding: 40px;
+    color: #fff;
+    border-radius: 5px;
+    margin: 20px;
+    text-align: center;
+}
+#section-card{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.card{
+    width: 30%;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.card-body, .card-footer{
+    padding: 20px;
+}
+.card-footer{
+    border-top: 1px solid #f2f2f2;
+}

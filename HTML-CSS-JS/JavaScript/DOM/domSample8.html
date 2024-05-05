@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+        #box {
+            
+            position: absolute;
+        }
+        .mainbox {
+            width: 200px;
+            height: 200px;
+        }
+        #boxlt {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #boxrt {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        #boxlb {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        #boxrb {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+        #boxct {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        #boxcb {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        #boxlc {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+        #boxrc {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="mainbox" id="box"></div>
+        <div class="mainbox" id="boxlt"></div>
+        <div class="mainbox" id="boxrt"></div>
+        <div class="mainbox" id="boxlb"></div>
+        <div class="mainbox" id="boxrb"></div>
+        <div class="mainbox" id="boxct"></div>
+        <div class="mainbox" id="boxcb"></div>
+        <div class="mainbox" id="boxlc"></div>
+        <div class="mainbox" id="boxrc"></div>
+    </div>
+    
+    <script>
+        var colors = ["black","red", "yellow", "gray", "orange", "brown", "tomato", "white", "green", "black", "blue", "aqua","gray","white"];
+        var bgcolors = ["white","gray", "aqua", "blue", "black", "green", "white", "tomato", "brown", "orange", "gray", "yellow","red","black"];
+        let colorIndex = 0;
+        setInterval(function(){
+    
+            var color = colors[colorIndex];
+            var bgcolor = bgcolors[colorIndex];
+            colorIndex++;
+            colorIndex %= colors.length;
+            // if(colorIndex == colors.length){
+            //     colorIndex = 0;
+            // }
+            
+            document.querySelector(".container").style.backgroundColor = bgcolor;
+            var boxes = document.querySelectorAll(".mainbox");
+            boxes.forEach(function(box){
+                box.style.backgroundColor = color;
+            });
+        }, 1000);
+    </script>
+</body>
+</html>

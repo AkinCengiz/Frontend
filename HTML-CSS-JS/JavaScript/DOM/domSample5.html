@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+        .input-box {
+            margin-bottom: 10px;
+            width: 15%;
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body style="padding: 3%;">
+    <div class="input-box"><label for="name">Ad</label><input type="text" id="name"></div>
+    <div class="input-box"><label for="surname">Soyad</label><input type="text" id="surname"></div>
+    <div class="input-box"><label for="age">Yaş</label><input id="age" type="text"></div>
+    <button onclick="addRow()">Oluştur</button>
+    <hr>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+    <script>
+        function addRow(){
+            const nameInput = document.querySelector("#name");
+            const surnameInput = document.querySelector("#surname");
+            const ageInput = document.querySelector("#age");
+
+            const name = nameInput.value;
+            const surname = surnameInput.value;
+            const age = ageInput.value;
+
+            const trElement = document.createElement("tr");
+            const tdName = document.createElement("td");
+            const tdSurname = document.createElement("td");
+            const tdAge = document.createElement("td");
+
+            tdName.innerHTML = name;
+            tdSurname.innerHTML = surname;
+            tdAge.innerHTML = age;
+
+            trElement.appendChild(tdName);
+            trElement.appendChild(tdSurname);
+            trElement.appendChild(tdAge);
+            document.querySelector("tbody").appendChild(trElement);
+            nameInput.value = "";
+            surnameInput.value = "";
+            ageInput.value = "";
+        }
+        
+
+    </script>
+</body>
+</html>

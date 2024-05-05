@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="addRandomBox()">Add Random Box</button>
+    <hr>
+    <div class="container">
+
+    </div>
+
+    <script>
+        function addRandomBox(){
+            const container = document.querySelector(".container");
+            const box = document.createElement("div");
+            box.classList.add("box");
+            box.style.width = Math.floor(Math.random() * 100) + 50 + "px";
+            box.style.height = Math.floor(Math.random() * 100) + 50 + "px";
+            box.style.backgroundColor = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`;
+            box.style.position = "absolute";
+            box.style.left = Math.floor(Math.random() * 100) + "%";
+            box.style.top = Math.floor(Math.random() * 100) + "%";
+            container.appendChild(box);
+        }
+        </script>
+</body>
+</html>

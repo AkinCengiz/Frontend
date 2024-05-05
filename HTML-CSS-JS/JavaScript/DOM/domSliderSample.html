@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <img id="image-box" src="" alt="" width="250" height="auto">
+    <script>
+        var images = ["https://trthaberstatic.cdn.wp.trt.com.tr/resimler/450000/450029.jpg", "carsi.jpg", "https://www.turuncucerceve.com/upload/2013/07/animals1.jpg", "https://www.estetika.com.tr/uploads/hayvan-gorselleri-2.jpg"];
+
+        var indexNo = 0;
+        setInterval(()=>{
+            document.querySelector("#image-box").src = images[indexNo];
+            indexNo++;
+            if(indexNo == images.length){
+                indexNo = 0;
+            }
+        }, 2000)
+
+    </script>
+</body>
+</html>

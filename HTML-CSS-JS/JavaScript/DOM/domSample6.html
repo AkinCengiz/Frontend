@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .input-box {
+            margin-bottom: 10px;
+            width: 15%;
+            display: flex;
+            justify-content: space-between;
+        }
+        li {
+            list-style-type: none;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="input-box"><label for="item">Yaş</label><input id="item" type="number"></div>
+    <button onclick="addNumbers()">Oluştur</button>
+    <hr>
+
+    <ul>
+        
+    </ul>
+
+    <script>
+        function addNumbers(){
+            const number = document.querySelector("#item").value;
+        
+            for(i = 0; i <number; i++){
+                const liElement = document.createElement("li");
+                liElement.innerHTML = Math.floor(Math.random() * 100) + 1;
+                document.querySelector("ul").appendChild(liElement);
+            }
+        }
+        </script>
+</body>
+</html>

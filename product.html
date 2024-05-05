@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Product Price</th>
+                <th>Product Quantity</th>
+                <th>Product Description</th>
+            </tr>
+        </thead>
+        <tbody id="productsrow">
+            
+        </tbody>
+    </table>
+    <script>
+        //https://localhost:44324/api/Products/getall
+        fetch('https://northwind.vercel.app/api/products')
+        .then(response => response.json())
+        .then(data => {
+            let table = document.querySelector('table tbody');
+            data.forEach(product => {
+                let row = `<tr>
+                    <td>${product.productName}</td>
+                    <td>${product.productPrice}</td>
+                    <td>${product.productQuantity}</td>
+                    <td>${product.productDescription}</td>
+                </tr>`;
+                table.innerHTML += row;
+            });
+        });
+    </script>
+</body>
+</html>
